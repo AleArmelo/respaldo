@@ -334,11 +334,56 @@
       guardarProgreso();
       actualizarCreditos();
       actualizarBloqueos();
+      desbloquearItinerario();
     });
   });
+// Lógica personalizada para desbloquear Construcción de Itinerario con múltiples rutas (OR)
+function desbloquearItinerario() {
+  const aprobadas = [...document.querySelectorAll('.materia.aprobada')].map(el => el.dataset.id);
+
+  const rutaA = [
+    "Psicologia social",
+    "Art. de saberes 1: construccion del sujeto y del objeto en Psicologia",
+    "Teorias Psicologicas",
+    "fundamentos de la psicologia"
+  ];
+
+  const rutaB = [
+    "Psicologia, Sujeto y Aprendizaje",
+    "procesos-cognitivos",
+    "Neurobiologia de la mente",
+    "psicologia-desarrollo"
+  ];
+
+  const rutaC = [
+    "clinica1",
+    "Art. de saberes 3: clinica y subjetividad",
+    "Etica y deontologia",
+    "Epistemologia"
+  ];
+
+  const rutaD = [
+    "psicologia salud",
+    "Art. de saberes 2: Psicologia, Genero y Derechos Humanos"
+  ];
+
+  const cumpleRuta = (ruta) => ruta.every(id => aprobadas.includes(id));
+
+  const desbloquear = cumpleRuta(rutaA) || cumpleRuta(rutaB) || cumpleRuta(rutaC) || cumpleRuta(rutaD);
+
+  const materia = document.querySelector('.materia[data-id="itinerario"]');
+  if (materia && !materia.classList.contains("aprobada")) {
+    if (desbloquear) {
+      materia.classList.remove("bloqueada");
+    } else {
+      materia.classList.add("bloqueada");
+    }
+  }
+}
 
   actualizarCreditos();
   actualizarBloqueos();
+desbloquearItinerario(); 
 </script>
 </body>
 </html>
