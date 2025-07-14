@@ -142,7 +142,7 @@
 </div>
 </div>
     <div class="celda">
-<div class="materia" data-id="Art. de saberes 2: Psicologia, Genero y Derechos Humanos" data-creditos="5">
+<div class="materia" data-id="articulacion2" data-creditos="5">
   Art. de saberes 2: Psicologia, Genero y Derechos Humanos
   (creditos 5)
 </div>
@@ -177,7 +177,7 @@
 </div>
     <div class="celda"></div>
 <div class="celda"><div class="materia" data-id="Art. de saberes 3: clinica y subjetividad" data-creditos="5">
- Art. de saberes 3: clinica y subjetividad
+ Arti. de saberes 3: clinica y subjetividad
   (creditos 5)
 </div>
     </div>
@@ -188,10 +188,37 @@
     <div class="materia bloqueada" data-id="clinica1" data-creditos="5" data-previas="Art. de saberes 3: clinica y subjetividad,Teorias Psicologicas,fundamentos de la psicologia,Etica y deontologia,Epistemologia">
   Clínica I: Fundamentos Psicoanalíticos (creditos 5)
 </div>
+<div class="materia bloqueada" data-id="psicologia salud" data-creditos="10" data-previas="psicologia-desarrollo,fundamentos de la psicologia,articulacion2">
+  Psicología y Salud
+      (creditos 10)
 </div>
-    <div class="celda"></div>
-    <div class="celda"></div>
-    <div class="celda"></div>
+ </div>
+    <div class="celda">
+      <div class="materia bloqueada" data-id="herramientas-clinica" data-creditos="5" data-previas="Entrevista Psicologica,Inicio a la formacion en Psicologia,Art. de saberes 3: clinica y subjetividad,Teorias Psicologicas,fundamentos de la psicologia">
+  Herramientas de la Psicología Clínica
+      (creditos 5)
+</div>
+<div class="materia" data-id="Metodos cuatitativo" data-creditos="5">
+  Metodos y Tecnicas cuantitativas
+  (creditos 5)
+</div>
+  <div class="materia bloqueada" data-id="herramientas-social" data-creditos="5" data-previas="Psicologia social,Teorias Psicologicas,fundamentos de la psicologia,Art. de saberes 1: construccion del sujeto y del objeto en Psicologia">
+  Herramientas de la Psicología Social
+  (creditos 5)
+ </div>
+  </div>
+    <div class="celda"> 
+      <div class="materia bloqueada" data-id="diseno-proyectos" data-creditos="5" data-previas="Metodología General de la Investigación,Epistemologia,Metodos cuatitativo,Herramientas para el trabajo intelectual">
+  Diseño de Proyectos
+  (creditos 5)
+</div>
+</div>
+    <div class="celda">
+      <div class="materia bloqueada" data-id="Arti5" data-creditos="5" data-previas="Psicologia social,Art. de saberes 1: construccion del sujeto y del objeto en Psicologia,Teorias Psicologicas,fundamentos de la psicologia,articulacion2">
+  Arti IV: Estado, Sociedad y Políticas Públicas
+  (creditos 5)
+</div>
+</div>
     <div class="celda"></div>
 
     <div class="fila-semestre">5° semestre</div>
