@@ -120,7 +120,7 @@
 </div>
 
 <div class="materia" data-id="Teorias Psicologicas" data-creditos="5">
-  Psicología:Teorias Psicologicas
+Teorias Psicologicas
   (creditos 5)
 </div>
  </div>
@@ -222,7 +222,20 @@
     <div class="celda"></div>
 
     <div class="fila-semestre">5° semestre</div>
-    <div class="celda"></div>
+    <div class="celda">
+<div class="materia bloqueada" data-id="psicopatologia-ninos" data-creditos="5" data-previas="Entrevista Psicologica,Inicio a la formacion en Psicologia,clinica1,Art. de saberes 3: clinica y subjetividad,Teorias Psicologicas,fundamentos de la psicologia">
+  Psicopatología de la infancia y la adolescentes
+  (creditos 5)
+</div>
+<div class="materia bloqueada" data-id="psicopatologia-adultos" data-creditos="5" data-previas="Entrevista Psicologica,Inicio a la formacion en Psicologia,clinica1,Art. de saberes 3: clinica y subjetividad,Teorias Psicologicas,fundamentos de la psicologia">
+  Psicopatología de adultos
+  (creditos 5)
+</div>
+<div class="materia bloqueada" data-id="neuropsicologia" data-creditos="5" data-previas="procesos-cognitivos,Neurobiologia de la mente">
+  Neuropsicología
+  (creditos 5)
+</div>
+</div>
     <div class="celda"></div>
     <div class="celda"></div>
     <div class="celda"></div>
