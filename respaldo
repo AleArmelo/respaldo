@@ -6,7 +6,7 @@
   <style>
     body {
       font-family: sans-serif;
-      background: #f0f0f0;
+      background: #eab5f5;
       padding: 20px;
     }
 
@@ -24,7 +24,7 @@
     .encabezado {
       font-weight: bold;
       text-align: center;
-      background: #cfd8dc;
+      background: #99f2d6;
       padding: 10px;
       border-radius: 6px;
     }
@@ -32,7 +32,7 @@
     .fila-semestre {
       font-weight: bold;
       text-align: center;
-      background: #bbdefb;
+      background: #b9affa;
       padding: 10px;
       border-radius: 6px;
     }
@@ -42,7 +42,7 @@
       min-height: 80px;
       padding: 5px;
       border-radius: 6px;
-      border: 1px solid #ccc;
+      border: 1px solid #be93c7;
     }
 
     .materia {
@@ -160,7 +160,7 @@
   Psicologia social
     (creditos 10)
 </div>
-<div class="materia" data-id="Psicologia, Sujeto y Aprendizaje" data-creditos="5">
+<div class="materia" data-id="Psicologia Sujeto y Aprendizaje" data-creditos="5">
  Psicologia, Sujeto y Aprendizaje
   (creditos 5)
 </div>
@@ -266,25 +266,69 @@
 </div>
 
     <div class="fila-semestre">6° semestre</div>
-    <div class="celda"></div>
-    <div class="celda"></div>
-    <div class="celda"></div>
-    <div class="celda"></div>
-    <div class="celda"></div>
+    <div class="celda">
+    <div class="materia bloqueada" data-id="problematicas-sociales" data-creditos="5" data-previas="Psicologia social,Art. de saberes 1: construccion del sujeto y del objeto en Psicologia,Teorias Psicologicas,fundamentos de la psicologia,Arti5,Arti4,articulacion2">
+  Problemáticas contemporáneas de la psicología Social
+  (creditos 5)
+</div>
+
+      <div class="materia bloqueada" data-id="psicologia-educacion" data-creditos="5" data-previas="Psicologia Sujeto y Aprendizaje,procesos-cognitivos,Neurobiologia de la mente,psicologia-desarrollo,fundamentos de la psicologia">
+  Psicología y Educación
+  (creditos 5)
+</div>
+</div>
+    <div class="celda">
+      <div class="materia bloqueada" data-id="dispositivos-psicoterapeuticos" data-creditos="5" data-previas="clinica2,herramientas-clinica,Entrevista Psicologica,Inicio a la formacion en Psicologia,clinica1,Art. de saberes 3: clinica y subjetividad,Teorias Psicologicas,fundamentos de la psicologia,Etica y deontologia,Epistemologia">
+  Dispositivos Psicoterapéuticos
+  (creditos 5)
+</div>
+</div>
+    <div class="celda">
+      <div class="materia" data-id="proyectos" data-creditos="0">
+ Proyectos
+
+</div>
+  <div class="materia" data-id="practicas-integral" data-creditos="0">
+ practicas integral
+ 
+</div>
+    </div>
+    <div class="celda">
+      <div class="materia bloqueada" data-id="articulacion-vi" data-creditos="5" data-previas="Art. de saberes 1: construccion del sujeto y del objeto en Psicologia,articulacion2,Art. de saberes 3: clinica y subjetividad,Teorias Psicologicas,fundamentos de la psicologia">
+  Arti VI: Diálogos y ámbitos interdisciplinarios
+  (creditos 5)
+</div>
+</div>
+    <div class="celda">
+      <div class="materia bloqueada" data-id="itinerario" data-creditos="0">
+  Construcción de Itinerario
+  </div>
+    </div>
 
     <div class="fila-semestre">7° semestre</div>
     <div class="celda"></div>
     <div class="celda"></div>
     <div class="celda"></div>
     <div class="celda"></div>
-    <div class="celda"></div>
+    <div class="celda">
+      <div class="materia bloqueada" data-id="referencial-egreso-7" data-creditos="10">
+  Referencial de Egreso
+  (creditos 10)
+</div>
+    
+</div>
 
     <div class="fila-semestre">8° semestre</div>
     <div class="celda"></div>
     <div class="celda"></div>
     <div class="celda"></div>
     <div class="celda"></div>
-    <div class="celda"></div>
+    <div class="celda">
+      <div class="materia bloqueada" data-id="referencial-egreso-8" data-creditos="0">
+  Referencial de Egreso
+</div>
+    
+</div>
   </div>
 
   <p class="creditos">Total de créditos: <span id="creditos">0</span></p>
@@ -327,63 +371,108 @@
     localStorage.setItem('materiasAprobadas', JSON.stringify(aprobadas));
   }
 
+  // Desbloqueo de Itinerario con múltiples rutas
+  function desbloquearItinerario() {
+    const aprobadas = [...document.querySelectorAll('.materia.aprobada')].map(el => el.dataset.id);
+
+    const rutaA = [
+      "Psicologia social",
+      "Art. de saberes 1: construccion del sujeto y del objeto en Psicologia",
+      "Teorias Psicologicas",
+      "fundamentos de la psicologia"
+    ];
+
+    const rutaB = [
+      "Psicologia, Sujeto y Aprendizaje",
+      "procesos-cognitivos",
+      "Neurobiologia de la mente",
+      "psicologia-desarrollo"
+    ];
+
+    const rutaC = [
+      "clinica1",
+      "Art. de saberes 3: clinica y subjetividad",
+      "Etica y deontologia",
+      "Epistemologia"
+    ];
+
+    const rutaD = [
+      "psicologia salud",
+      "Art. de saberes 2: Psicologia, Genero y Derechos Humanos"
+    ];
+
+    const cumpleRuta = (ruta) => ruta.every(id => aprobadas.includes(id));
+    const desbloquear = cumpleRuta(rutaA) || cumpleRuta(rutaB) || cumpleRuta(rutaC) || cumpleRuta(rutaD);
+
+    const materia = document.querySelector('.materia[data-id="itinerario"]');
+    if (materia && !materia.classList.contains("aprobada")) {
+      if (desbloquear) {
+        materia.classList.remove("bloqueada");
+      } else {
+        materia.classList.add("bloqueada");
+      }
+    }
+  }
+
+  // Desbloqueo y sincronización de Referencial de Egreso
+  function desbloquearReferencialEgreso() {
+    const aprobadas = [...document.querySelectorAll('.materia.aprobada')].map(el => el.dataset.id);
+
+    const rutaReferencial = [
+      "fundamentos de la psicologia",
+      "Teorias Psicologicas",
+      "Psicologia social",
+      "Entrevista Psicologica",
+      "Inicio a la formacion en Psicologia",
+      "clinica1",
+      "Art. de saberes 3: clinica y subjetividad",
+      "articulacion2",
+      "Art. de saberes 1: construccion del sujeto y del objeto en Psicologia",
+      "psicologia-educacion",
+      "dispositivos-psicoterapeuticos"
+    ];
+
+    const cumple = rutaReferencial.every(id => aprobadas.includes(id));
+
+    const ids = ["referencial-egreso-7", "referencial-egreso-8"];
+    ids.forEach(id => {
+      const materia = document.querySelector(`.materia[data-id="${id}"]`);
+      if (materia && !materia.classList.contains("aprobada")) {
+        if (cumple) {
+          materia.classList.remove("bloqueada");
+        } else {
+          materia.classList.add("bloqueada");
+        }
+      }
+    });
+  }
+
   materias.forEach(materia => {
     materia.addEventListener('click', () => {
       if (materia.classList.contains('bloqueada')) return;
-      materia.classList.toggle('aprobada');
+
+      // Sincronización especial para Referencial duplicado
+      if (materia.dataset.id === "referencial-egreso-7" || materia.dataset.id === "referencial-egreso-8") {
+        const yaAprobada = materia.classList.contains("aprobada");
+        const ambas = document.querySelectorAll('.materia[data-id="referencial-egreso-7"], .materia[data-id="referencial-egreso-8"]');
+        ambas.forEach(m => m.classList.toggle('aprobada', !yaAprobada));
+      } else {
+        materia.classList.toggle('aprobada');
+      }
+
       guardarProgreso();
       actualizarCreditos();
       actualizarBloqueos();
       desbloquearItinerario();
+      desbloquearReferencialEgreso();
     });
   });
-// Lógica personalizada para desbloquear Construcción de Itinerario con múltiples rutas (OR)
-function desbloquearItinerario() {
-  const aprobadas = [...document.querySelectorAll('.materia.aprobada')].map(el => el.dataset.id);
 
-  const rutaA = [
-    "Psicologia social",
-    "Art. de saberes 1: construccion del sujeto y del objeto en Psicologia",
-    "Teorias Psicologicas",
-    "fundamentos de la psicologia"
-  ];
-
-  const rutaB = [
-    "Psicologia, Sujeto y Aprendizaje",
-    "procesos-cognitivos",
-    "Neurobiologia de la mente",
-    "psicologia-desarrollo"
-  ];
-
-  const rutaC = [
-    "clinica1",
-    "Art. de saberes 3: clinica y subjetividad",
-    "Etica y deontologia",
-    "Epistemologia"
-  ];
-
-  const rutaD = [
-    "psicologia salud",
-    "Art. de saberes 2: Psicologia, Genero y Derechos Humanos"
-  ];
-
-  const cumpleRuta = (ruta) => ruta.every(id => aprobadas.includes(id));
-
-  const desbloquear = cumpleRuta(rutaA) || cumpleRuta(rutaB) || cumpleRuta(rutaC) || cumpleRuta(rutaD);
-
-  const materia = document.querySelector('.materia[data-id="itinerario"]');
-  if (materia && !materia.classList.contains("aprobada")) {
-    if (desbloquear) {
-      materia.classList.remove("bloqueada");
-    } else {
-      materia.classList.add("bloqueada");
-    }
-  }
-}
-
+  // Al cargar
   actualizarCreditos();
   actualizarBloqueos();
-desbloquearItinerario(); 
+  desbloquearItinerario();
+  desbloquearReferencialEgreso();
 </script>
 </body>
 </html>
