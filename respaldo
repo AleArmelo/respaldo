@@ -222,50 +222,46 @@
     <div class="celda"></div>
 
     <div class="fila-semestre">5° semestre</div>
-    <div class="celda">
-      <div class="materia bloqueada" data-id="psicopatologia-ninos" data-creditos="5" data-previas="Entrevista Psicologica,Inicio a la formacion en Psicologia,clinica1,Art. de saberes 3: clinica y subjetividad,Teorias Psicologicas,fundamentos de la psicologia">
-  Psicopatología de la infancia y la adolescentes
-  (creditos 5)
-</div>
- <div class="materia bloqueada" data-id="psicopatologia-adultos" data-creditos="5" data-previas="Entrevista Psicologica,Inicio a la formacion en Psicologia,clinica1,Art. de saberes 3: clinica y subjetividad,Teorias Psicologicas,fundamentos de la psicologia">
-  Psicopatología de adultos
-  (creditos 5)
-</div>
- <div class="materia bloqueada" data-id="neuropsicologia" data-creditos="5" data-previas="procesos-cognitivos,Neurobiologia de la mente">
-  Neuropsicología
-  (creditos 5)
-</div>
-</div>
-    <div class="celda">
-      <div class="materia bloqueada" data-id="clinica2" data-creditos="5" data-previas="herramientas-clinica,Entrevista Psicologica,Inicio a la formacion en Psicologia,clinica1,Art. de saberes 3: clinica y subjetividad,Teorias Psicologicas,fundamentos de la psicologia">
-  Clínica II: Teorías y Técnicas de las Intervenciones
-  (creditos 5)
-</div>
- </div>
-    <div class="celda">
-      <div class="materia" data-id="proyectos" data-creditos="10">
- Proyectos
-  (creditos 10)
-</div>
-<div class="materia" data-id="practicas-integral" data-creditos="10">
- practicas integral
-  (creditos 10)
-</div>
-    </div>
-    <div class="celda">
-      <div class="materia bloqueada" data-id="Arti5" data-creditos="5" data-previas="herramientas-social,Psicologia social,Teorias Psicologicas,fundamentos de la psicologia,Art. de saberes 1: construccion del sujeto y del objeto en Psicologia,Arti4,articulacion2">
-  Arti V: La psicología social y el problema de lo colectivo
-  (creditos 5)
-</div>
-</div>
-    <div class="celda">
-  <div class="materia bloqueada" data-id="itinerario" data-creditos="5">
-  Construcción de Itinerario
-  (creditos 5)
-</div>
+<!-- Psicología -->
+<div class="celda">
+  <div class="materia bloqueada" data-id="psicopatologia-ninos" data-creditos="5" data-previas="Entrevista Psicologica,Inicio a la formacion en Psicologia,clinica1,Art. de saberes 3: clinica y subjetividad,Teorias Psicologicas,fundamentos de la psicologia">
+    Psicopatología de la infancia y la adolescentes (créditos 5)
+  </div>
+  <div class="materia bloqueada" data-id="psicopatologia-adultos" data-creditos="5" data-previas="Entrevista Psicologica,Inicio a la formacion en Psicologia,clinica1,Art. de saberes 3: clinica y subjetividad,Teorias Psicologicas,fundamentos de la psicologia">
+    Psicopatología de adultos (créditos 5)
+  </div>
+  <div class="materia bloqueada" data-id="neuropsicologia" data-creditos="5" data-previas="procesos-cognitivos,Neurobiologia de la mente">
+    Neuropsicología (créditos 5)
+  </div>
 </div>
 
-    <div class="fila-semestre">6° semestre</div>
+<!-- Metodológico -->
+<div class="celda">
+  <div class="materia bloqueada" data-id="clinica2" data-creditos="5" data-previas="herramientas-clinica,Entrevista Psicologica,Inicio a la formacion en Psicologia,clinica1,Art. de saberes 3: clinica y subjetividad,Teorias Psicologicas,fundamentos de la psicologia">
+    Clínica II: Teorías y Técnicas de las Intervenciones (créditos 5)
+  </div>
+</div>
+
+<!-- Práctica y Proyecto -->
+<div class="celda">
+  <div class="materia bloqueada" data-id="proyectos-5" data-creditos="10">Proyectos (créditos 10)</div>
+  <div class="materia bloqueada" data-id="practicas-integral-5" data-creditos="10">Prácticas Integral (créditos 10)</div>
+</div>
+
+<!-- Articulación de Saberes -->
+<div class="celda">
+  <div class="materia bloqueada" data-id="Arti5" data-creditos="5">
+    Arti V: La psicología social y el problema de lo colectivo (créditos 5)
+  </div>
+</div>
+
+<!-- Referencial -->
+<div class="celda">
+  <div class="materia bloqueada" data-id="itinerario" data-creditos="5">
+    Construcción de Itinerario (créditos 5)
+  </div>
+</div>
+ <div class="fila-semestre">6° semestre</div>
     <div class="celda">
     <div class="materia bloqueada" data-id="problematicas-sociales" data-creditos="5" data-previas="Psicologia social,Art. de saberes 1: construccion del sujeto y del objeto en Psicologia,Teorias Psicologicas,fundamentos de la psicologia,Arti5,Arti4,articulacion2">
   Problemáticas contemporáneas de la psicología Social
@@ -284,9 +280,8 @@
 </div>
 </div>
     <div class="celda">
-      <div class="materia" data-id="proyectos" data-creditos="0">
- Proyectos
-
+<div class="materia bloqueada" data-id="proyectos-6" data-creditos="0">
+  Proyectos
 </div>
   <div class="materia" data-id="practicas-integral" data-creditos="0">
  practicas integral
@@ -320,10 +315,15 @@
   <div class="materia bloqueada" data-id="optativa-2-7" data-creditos="5">
     Optativa 2 (créditos 5)
   </div>
+  <div class="materia bloqueada" data-id="idioma-7" data-creditos="5">
+  Idioma (créditos 5)
+</div>
 </div>
 
 <!-- Práctica y Proyecto -->
-<div class="celda"></div>
+<div class="celda">
+  <div class="materia bloqueada" data-id="proyectos-7" data-creditos="0">Proyectos</div>
+</div>
 
 <!-- Articulación de Saberes -->
 <div class="celda">
@@ -346,8 +346,16 @@
       <div class="materia bloqueada" data-id="optativa-2-8" data-creditos="0">
   Optativa 2
 </div>
+<div class="materia bloqueada" data-id="idioma-8" data-creditos="0">
+  Idioma
 </div>
-    <div class="celda"></div>
+      
+</div>
+    <div class="celda">
+      <div class="materia bloqueada" data-id="proyectos-8" data-creditos="0">
+        Proyectos
+      </div>
+    </div>
     <div class="celda"></div>
     <div class="celda">
       <div class="materia bloqueada" data-id="referencial-egreso-8" data-creditos="0">
@@ -535,6 +543,41 @@ function desbloquearOptativas() {
   desbloquearItinerario();
   desbloquearReferencialEgreso();
   desbloquearOptativas();
+  function desbloquearProyectos() {
+  const aprobadas = [...document.querySelectorAll('.materia.aprobada')].map(el => el.dataset.id);
+
+  const requeridas = [
+    "Historia de la psicologia",
+    "Neurobiologia de la mente",
+    "fundamentos de la psicologia",
+    "Epistemologia",
+    "Herramientas para el trabajo intelectual",
+    "Art. de saberes 1: construccion del sujeto y del objeto en Psicologia",
+    "Inicio a la formacion en Psicologia",
+    "diseno-proyectos",
+    "Metodos cuatitativo" // o podrías usar el alternativo cualitativo si querés una ruta doble
+  ];
+
+  const cumple = requeridas.every(id => aprobadas.includes(id));
+
+  const ids = ["proyectos-5", "proyectos-6", "proyectos-7", "proyectos-8"];
+  ids.forEach(id => {
+    const materia = document.querySelector(`.materia[data-id="${id}"]`);
+    if (materia && !materia.classList.contains("aprobada")) {
+      if (cumple) {
+        materia.classList.remove("bloqueada");
+      } else {
+        materia.classList.add("bloqueada");
+      }
+    }
+  });
+}
+actualizarCreditos();
+actualizarBloqueos();
+desbloquearItinerario();
+desbloquearReferencialEgreso();
+desbloquearOptativas();
+desbloquearProyectos();
 </script>
 </body>
 </html>
