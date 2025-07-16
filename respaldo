@@ -305,22 +305,48 @@
   </div>
     </div>
 
-    <div class="fila-semestre">7° semestre</div>
-    <div class="celda"></div>
-    <div class="celda"></div>
-    <div class="celda"></div>
-    <div class="celda"></div>
-    <div class="celda">
-      <div class="materia bloqueada" data-id="referencial-egreso-7" data-creditos="10">
-  Referencial de Egreso
-  (creditos 10)
+   <!-- 7° semestre -->
+<div class="fila-semestre">7° semestre</div>
+
+<!-- Psicología -->
+<div class="celda">
+  <div class="materia bloqueada" data-id="optativa-1" data-creditos="5">
+    Optativa 1 (créditos 5)
+  </div>
 </div>
-    
+
+<!-- Metodológico -->
+<div class="celda">
+  <div class="materia bloqueada" data-id="optativa-2-7" data-creditos="5">
+    Optativa 2 (créditos 5)
+  </div>
 </div>
+
+<!-- Práctica y Proyecto -->
+<div class="celda"></div>
+
+<!-- Articulación de Saberes -->
+<div class="celda">
+  <div class="materia bloqueada" data-id="optativa-3" data-creditos="5">
+    Optativa 3 (créditos 5)
+  </div>
+</div>
+
+<!-- Referencial -->
+<div class="celda">
+  <div class="materia bloqueada" data-id="referencial-egreso-7" data-creditos="5">
+    Referencial de Egreso (créditos 5)
+  </div>
+</div>
+
 
     <div class="fila-semestre">8° semestre</div>
     <div class="celda"></div>
-    <div class="celda"></div>
+    <div class="celda">
+      <div class="materia bloqueada" data-id="optativa-2-8" data-creditos="0">
+  Optativa 2
+</div>
+</div>
     <div class="celda"></div>
     <div class="celda"></div>
     <div class="celda">
@@ -467,12 +493,48 @@
       desbloquearReferencialEgreso();
     });
   });
+function desbloquearOptativas() {
+  const aprobadas = [...document.querySelectorAll('.materia.aprobada')].map(el => el.dataset.id);
+
+  const requeridas = [
+    "fundamentos de la psicologia",
+    "Historia de la psicologia",
+    "Neurobiologia de la mente",
+    "Epistemologia",
+    "Herramientas para el trabajo intelectual",
+    "Art. de saberes 1: construccion del sujeto y del objeto en Psicologia",
+    "Inicio a la formacion en Psicologia",
+    "Etica y deontologia",
+    "Psicologia Sujeto y Aprendizaje",
+    "psicologia salud",
+    "clinica1",
+    "Art. de saberes 3: clinica y subjetividad",
+    "herramientas-clinica",
+    "herramientas-social",
+    "Psicologia social"
+  ];
+
+  const cumple = requeridas.every(id => aprobadas.includes(id));
+
+  const ids = ["optativa-1", "optativa-2-7", "optativa-2-8", "optativa-3"];
+  ids.forEach(id => {
+    const materia = document.querySelector(`.materia[data-id="${id}"]`);
+    if (materia && !materia.classList.contains("aprobada")) {
+      if (cumple) {
+        materia.classList.remove("bloqueada");
+      } else {
+        materia.classList.add("bloqueada");
+      }
+    }
+  });
+}
 
   // Al cargar
   actualizarCreditos();
   actualizarBloqueos();
   desbloquearItinerario();
   desbloquearReferencialEgreso();
+  desbloquearOptativas();
 </script>
 </body>
 </html>
