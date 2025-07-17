@@ -283,9 +283,8 @@
 <div class="materia bloqueada" data-id="proyectos-6" data-creditos="0">
   Proyectos
 </div>
-  <div class="materia" data-id="practicas-integral" data-creditos="0">
- practicas integral
- 
+  <div class="materia bloqueada" data-id="practicas-integral-6" data-creditos="0">
+  Prácticas Integral
 </div>
     </div>
     <div class="celda">
@@ -578,6 +577,48 @@ desbloquearItinerario();
 desbloquearReferencialEgreso();
 desbloquearOptativas();
 desbloquearProyectos();
+function desbloquearPracticasIntegral() {
+  const aprobadas = [...document.querySelectorAll('.materia.aprobada')].map(el => el.dataset.id);
+
+  const requeridas = [
+    "fundamentos de la psicologia",
+    "Historia de la psicologia",
+    "Neurobiologia de la mente",
+    "Epistemologia",
+    "Herramientas para el trabajo intelectual",
+    "Art. de saberes 1: construccion del sujeto y del objeto en Psicologia",
+    "Inicio a la formacion en Psicologia",
+    "Etica y deontologia",
+    "psicologia salud",
+    "Psicologia Sujeto y Aprendizaje",
+    "clinica1",
+    "Art. de saberes 3: clinica y subjetividad",
+    "herramientas-clinica",
+    "herramientas-social",
+    "Psicologia social"
+  ];
+
+  const cumple = requeridas.every(id => aprobadas.includes(id));
+
+  const ids = ["practicas-integral-5", "practicas-integral-6"];
+  ids.forEach(id => {
+    const materia = document.querySelector(`.materia[data-id="${id}"]`);
+    if (materia && !materia.classList.contains("aprobada")) {
+      if (cumple) {
+        materia.classList.remove("bloqueada");
+      } else {
+        materia.classList.add("bloqueada");
+      }
+    }
+  });
+}
+actualizarCreditos();
+actualizarBloqueos();
+desbloquearItinerario();
+desbloquearReferencialEgreso();
+desbloquearOptativas();
+desbloquearProyectos();
+desbloquearPracticasIntegral();
 </script>
 </body>
 </html>
